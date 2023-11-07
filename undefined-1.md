@@ -1,6 +1,34 @@
 # 코드 퀄리티 높이기
 
+### React Query
 
+* Props drilling 하는 것 보다 각 컴포넌트에서 useQuery 요청하는 것을 지향하자.
+  * 이유는 하나의 page에서 useQuery를 여러번 처리하더라도, option을 적절하게 주면 한 번의 API 콜로 모든 섹션과 모달에서 UI 렌더링에 필요한 객체 참조가 가능하기 때문이다.
+
+### TypeScript
+
+* type 강제는 자제 (ex. `gameStatus={game.buttonText as GameStatus}`)
+  * interface에서 필드에 적용해도 안된다면 아래 useQuery에서 타입 제너릭으로 넣어주자.
+* apis models의 enum은 주로 req/res 의 필드 정의하기 위함이 먼저라 buttonText filed도 enum GameStatus 적용하면hook에서 받아쓸 때 아래처럼 타입 강제 캐스팅 안하셔도 될 것 같습니다.
+* 불필요한 옵셔널 체이닝 지양
+  * 옵셔널 체이닝은 존재하지 않아도 괜찮은 대상에만 사용하자.
+  * 논리상으로 필수적으로 존재해야하는 값에 옵셔널 체이닝을 사용하게되면 실수로 값을 할당하지 않았을 경우 에러를 발견하지 못하고 디버깅이 어려워 질 수 있다.
+
+### HTML
+
+* div 사용 수는 최대한 줄이자.
+
+### CSS
+
+* width 고정으로 가는걸 지양하자.
+  * Section의 경우 화면이 약간은 줄어들더라도 UI적인 대응을 하기 위해
+  * 버튼같은 경우에는 다국어, 텍스트 변경등이 생기는 경우 word break가 일어나지 않게 하기 위해
+
+### Naming
+
+* Button의 경우에는 Wrapper 라고 네이밍 하기에는 어색함. 어떤 기능을 하는 버튼인지 네이밍하자.
+
+###
 
 
 
