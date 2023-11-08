@@ -1,5 +1,11 @@
 # 코드 퀄리티 높이기
 
+
+
+### General
+
+* 알아보기 힘든 코드는 결국 버그를 만들게 된다.
+
 ### React Query
 
 * Props drilling 하는 것 보다 각 컴포넌트에서 useQuery 요청하는 것을 지향하자.
